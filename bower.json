@@ -1,0 +1,17 @@
+{
+  "name": "number-manager",
+  "description": "",
+  "version": "1.0.0",
+  "homepage": "https://github.com/oleg-kovalchuk/number-manager.git",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.6.0",
+    "angular-loader": "~1.6.0",
+    "angular-mocks": "~1.6.0",
+    "html5-boilerplate": "^5.3.0",
+    "angular-ui-router": "1.0.0-beta.3",
+    "restangular": "^1.6.1",
+    "angular-resource": "^1.6.1"
+  }
+}

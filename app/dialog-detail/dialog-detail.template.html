@@ -1,0 +1,19 @@
+<md-dialog>
+	<form ng-cloak>
+		<md-dialog-content>
+			<div class="md-dialog-content">
+				<h3>Number details</h3>
+				<ul>
+					<li><strong>Number:</strong> {{number.phone | phoneNumber}}</li>
+					<li><strong>City:</strong> {{number.city.title}}</li>
+					<li><strong>Tariff:</strong> {{number.tariff.name}}</li>
+					<li><strong>Booked:</strong> {{number.booked ? '\u2714' : '\u2718'}}</li>
+				</ul>
+				<p>{{number.tariff.desc}}</p>
+			</div>
+		</md-dialog-content>
+		<md-dialog-actions layout="row">
+			<md-button ng-click="cansel()">Cansel</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>

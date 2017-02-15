@@ -1,0 +1,11 @@
+<md-content class="md-padding _md layout-column" layout="column" flex="70">
+	<md-list flex ng-if="$ctrl.numbers.length">
+		<div class="md-list-item-text">
+			<md-input-container>
+				<label>Filter numbers</label>
+				<input type="search" ng-model="q" />
+			</md-input-container>
+			<number-list-item ng-repeat="number in $ctrl.numbers | filter:q as results" number="number"></number-list-item>
+		</div>
+	</md-list>
+</md-content>

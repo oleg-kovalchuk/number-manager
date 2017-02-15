@@ -1,0 +1,10 @@
+<md-content class="md-padding _md layout-column" layout="column" flex="70">
+	<md-list flex>
+		<div class="md-list-item-text"">
+			<number-create></number-create>
+			<div ng-repeat="number in $ctrl.numbers">
+				<number-admin-item number="number"></number-admin-item>
+			</div>
+		</div>
+	</md-list>
+</md-content>

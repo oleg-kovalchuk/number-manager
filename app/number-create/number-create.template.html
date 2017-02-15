@@ -1,0 +1,25 @@
+<md-button ng-if="!$ctrl.editMode" class="md-raised md-primary" ng-click="$ctrl.handleMode()">{{!$ctrl.editMode ? 'create' : 'cansel'}}</md-button>
+
+<md-list-item class="md-3-line" ng-if="$ctrl.editMode">
+    <div layout-gt-sm="row" class="layout-gt-sm-row">
+		<md-input-container flex="30">
+			<label>Phone</label>
+			<input name="phone" required md-maxlength="11" maxlength="11" minlength="11" type="text" ng-model="$ctrl.number.phone" />
+
+		</md-input-container>
+		<md-input-container flex="30">
+			<label>City</label>
+			<md-select required ng-model="$ctrl.number.city_id" >
+				<md-option ng-repeat="city in $ctrl.cities" ng-selected="{{city.id == $ctrl.number.city.id}}" value="{{city.id}}">{{city.title}}</md-option>
+			</md-select>
+		</md-input-container>
+		<md-input-container flex="30">
+			<label>Tariff</label>
+			<md-select required ng-model="$ctrl.number.tariff_id" >
+				<md-option ng-repeat="tariff in $ctrl.tariffs" ng-selected="{{tariff.id == $ctrl.number.tariff.id}}" value="{{tariff.id}}">{{tariff.name}}</md-option>
+			</md-select>
+		</md-input-container>
+	</div>
+	<md-button class="md-raised md-primary" ng-if="$ctrl.editMode" ng-click="$ctrl.saveNumber()">save</md-button>
+	<md-button class="md-raised md-warn" ng-if="$ctrl.editMode" ng-click="$ctrl.handleMode()">cansel</md-button>
+</md-list-item>

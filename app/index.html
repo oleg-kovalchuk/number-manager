@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="numberManager" ng-cloak class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Number Manager</title>
+	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+	<link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+	<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<header>
+		<md-button class="md-raised md-cornered" ui-sref="welcome">home</md-button>
+		<md-button class="md-raised md-cornered" ui-sref="admin">admin</md-button>
+</header>
+<div layout="column" ng-cloak flex="100" class="doc-content">
+	<ui-view></ui-view>
+</div>
+	<!-- In production use:  -->
+<!--   <script src="bower_components/angular/angular.js"></script>-->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
+	<script>
+		_.contains = _.includes;
+	</script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/restangular/1.5.1/restangular.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+	<script src="app.js"></script>
+	<script src="app.config.js"></script>
+	<script src="core/core.module.js"></script>
+	<script src="core/number/number.filter.js"></script>
+	<script src="core/number/number.module.js"></script>
+	<script src="core/number/number.service.js"></script>
+	<script src="core/city/city.module.js"></script>
+	<script src="core/city/city.service.js"></script>
+	<script src="core/tariff/tariff.module.js"></script>
+	<script src="core/tariff/tariff.service.js"></script>
+	<script src="number-list/number-list.module.js"></script>
+	<script src="number-list/number-list.component.js"></script>
+	<script src="number-list-item/number-list-item.module.js"></script>
+	<script src="number-list-item/number-list-item.component.js"></script>
+	<script src="number-admin/number-admin.module.js"></script>
+	<script src="number-admin/number-admin.component.js"></script>
+	<script src="number-admin-item/number-admin-item.module.js"></script>
+	<script src="number-admin-item/number-admin-item.component.js"></script>
+	<script src="number-create/number-create.module.js"></script>
+	<script src="number-create/number-create.component.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<md-list-item layout-gt-sm="row" class="md-list-item-text" ng-if="$ctrl.editMode">
+	<div layout-gt-sm="row" class="layout-gt-sm-row">
+	    <md-input-container flex="20" class="md-block" flex-gt-sm>
+			<label>Phone</label>
+			<input type="text" required md-maxlength="11" maxlength="11" minlength="11" ng-model="$ctrl.number.phone" />
+		</md-input-container>
+	    <md-input-container flex="20" class="md-block" flex-gt-sm>
+			<label>City</label>
+			<md-select ng-model="$ctrl.number.city_id" >
+				<md-option ng-repeat="city in $ctrl.cities" ng-selected="{{city.id == $ctrl.number.city.id}}" value="{{city.id}}">{{city.title}}</md-option>
+			</md-select>
+		</md-input-container>
+	    <md-input-container flex="20" class="md-block" flex-gt-sm>
+			<label>Tariff</label>
+			<md-select ng-model="$ctrl.number.tariff_id" >
+				<md-option ng-repeat="tariff in $ctrl.tariffs" ng-selected="{{tariff.id == $ctrl.number.tariff.id}}" value="{{tariff.id}}">{{tariff.name}}</md-option>
+			</md-select>
+		</md-input-container>
+	</div>
+		
+		<md-button class="md-raised md-primary" ng-if="$ctrl.editMode" ng-click="$ctrl.saveNumber()">save</md-button>
+		<md-button class="md-raised md-warn" ng-if="$ctrl.editMode" ng-click="$ctrl.handleMode()">cansel</md-button>
+</md-list-item>
+
+<md-list-item class="md-3-line" ng-click="$ctrl.onSelect(number)" ng-if="!$ctrl.editMode && $ctrl.number">
+	<div class="md-list-item-text">
+		<h3>{{$ctrl.number.phone | phoneNumber}}</h3>
+		<h4>{{$ctrl.number.city.title}}</h4>
+		<p>{{$ctrl.number.tariff.name}} | {{$ctrl.number.booked ? 'Booked' : 'Unbooked'}}</p>
+	</div>
+	<md-button ng-if="$ctrl.number.booked" class="md-raised md-primary" ng-click="$ctrl.unbookNumber()">unbook</md-button>
+	<md-button class="md-raised md-primary" ng-click="$ctrl.handleMode()">edit</md-button>
+	<md-button class="md-raised md-warn" ng-click="$ctrl.deleteNumber()">delete</md-button>
+</md-list-item>

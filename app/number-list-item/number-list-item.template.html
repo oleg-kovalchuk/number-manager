@@ -1,0 +1,8 @@
+<md-list-item class="md-3-line" ng-hide="number.booked" ng-click="$ctrl.onSelect($event)">
+    <div class="md-list-item-text">
+		<h3>{{$ctrl.number.phone | phoneNumber}}</h3>
+		<h4>{{$ctrl.number.city.title}}</h4>
+		<p>{{$ctrl.number.tariff.name}}</p>
+	</div>
+	<md-button class="md-raised md-primary" ng-click="$ctrl.orderNumber($event)">order</md-button>
+</md-list-item>
